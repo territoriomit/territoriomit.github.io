@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title data-i18n="events.title">Events — Territorio</title>
+<title data-i18n="events.title">Events · Territorio</title>
 <meta content="Panels, conversations, and gatherings hosted by Territorio at MIT on Latin American urban policy." data-i18n="events.meta" data-i18n-attr="content" name="description"/>
 <link href="assets/logo/icon.svg" rel="icon"/>
 <link href="assets/css/site.css" rel="stylesheet"/>
@@ -13,7 +13,7 @@
 <body>
 <a class="skip" data-i18n="common.001" href="#main">Skip to content</a>
 <header class="site-header">
-<a aria-label="Territorio — home" class="brand" href="index.html"><img alt="Territorio" class="mark-word" src="assets/logo/wordmark.svg"/><img alt="Territorio" class="mark-icon" src="assets/logo/icon.svg"/></a>
+<a aria-label="Territorio, home" class="brand" href="index.html"><img alt="Territorio" class="mark-word" src="assets/logo/wordmark.svg"/><img alt="Territorio" class="mark-icon" src="assets/logo/icon.svg"/></a>
 <nav aria-label="Main" class="main">
 <a data-i18n="common.002" href="index.html">Home</a>
 <a data-i18n="common.003" href="people.html">People</a>
@@ -28,26 +28,54 @@
 <h1 class="display" data-i18n="common.004">Events</h1>
 <p class="subtitle" data-i18n="events.009" style="margin-top:1.5rem;max-width:44ch">conversations that bring latin american urban practice into the rooms where the future of cities is discussed</p>
 </section>
-<!-- FEATURED / MOST RECENT EVENT -->
 <section class="wrap rule-top">
-<div class="two" style="align-items:start">
-<div>
-<p class="eyebrow" data-i18n="events.010" style="margin-bottom:1rem">22 April 2026 · DUSP City Arena, Cambridge MA</p>
-<h2 class="section-title" data-i18n="common.015" style="max-width:20ch">Upgrading What Exists: Housing in Argentina</h2>
-<p class="subtitle" data-i18n="events.012" style="margin-bottom:2rem">a conversation on the qualitative housing deficit and the layers of informality in argentina</p>
+<div aria-label="Filter events by type" class="filters" role="group">
+<button aria-pressed="true" data-filter="all" data-i18n="events.070" type="button">All</button>
+<button aria-pressed="false" data-filter="social" data-i18n="events.071" type="button">Social</button>
+<button aria-pressed="false" data-filter="academic" data-i18n="events.072" type="button">Academic</button>
+<button aria-pressed="false" data-filter="professional" data-i18n="events.073" type="button">Professional</button>
+</div>
+<div class="event-list" id="events">
+<article class="event" data-cat="social" id="lunch-gathering">
+<h2 class="event__h">
+<button aria-controls="body-lunch-gathering" aria-expanded="false" class="event__head" type="button">
+<span class="event__date" data-i18n="events.041">9 May 2026 · MIT</span>
+<span class="event__title" data-i18n="events.042">First Territorio lunch gathering</span>
+<span class="tag tag--filled" data-i18n="events.071" style="--accent:var(--pink);color:var(--ink)">Social</span>
+<span aria-hidden="true" class="event__mark"></span>
+</button>
+</h2>
+<div class="event__body" hidden="" id="body-lunch-gathering">
+<div class="two" style="align-items:center">
 <div class="measure">
-<p data-i18n="events.013">Our first event brought together a conversation on the qualitative housing deficit and the layers of informality in Argentina. The panel examined how we conceptualize this deficit and identify which policy instruments actually move the needle — considering both financing and implementation.</p>
+<p class="subtitle" data-i18n="events.043" style="margin-bottom:1.5rem">an informal gathering to meet, share brazilian food, and talk about latin american cities</p>
+<p data-i18n="events.044">Excited to have hosted our first Territorio lunch gathering with MIT students from across departments. The gathering was a great opportunity to introduce the group, get to know one another, share delicious Brazilian food, and discuss our common interests in Latin American urban policy and planning. Stay tuned for many more gatherings to come!</p>
+</div>
+<div aria-hidden="true"><div class="shape shape--c" style="--accent:var(--pink)"></div></div>
+</div>
+</div>
+</article>
+<article class="event" data-cat="academic" id="upgrading-what-exists">
+<h2 class="event__h">
+<button aria-controls="body-upgrading-what-exists" aria-expanded="false" class="event__head" type="button">
+<span class="event__date" data-i18n="events.010">22 April 2026 · DUSP City Arena, Cambridge MA</span>
+<span class="event__title" data-i18n="common.015">Upgrading What Exists: Housing in Argentina</span>
+<span class="tag tag--filled" data-i18n="events.072" style="--accent:var(--blue)">Academic</span>
+<span aria-hidden="true" class="event__mark"></span>
+</button>
+</h2>
+<div class="event__body" hidden="" id="body-upgrading-what-exists">
+<div class="two" style="align-items:start">
+<div class="measure">
+<p class="subtitle" data-i18n="events.012" style="margin-bottom:1.5rem">a conversation on the qualitative housing deficit and the layers of informality in argentina</p>
+<p data-i18n="events.013">Our first event brought together a conversation on the qualitative housing deficit and the layers of informality in Argentina. The panel examined how we conceptualize this deficit and identify which policy instruments actually move the needle, considering both financing and implementation.</p>
 <p data-i18n="events.014">Gathering at the DUSP City Arena, we were proud to host this dialogue with the MIT Department of Urban Studies and Planning, the Harvard Argentine Student Society (HASS), and LatinGSD. This event marks the first step for Territorio in fostering discussion on urban challenges across the region.</p>
 </div>
-</div>
 <div>
-<img alt="The panel at DUSP City Arena, moderated by Professor Bish Sanyal" height="1200" src="assets/img/event-panel.jpg" style="width:100%;height:auto" width="1200"/>
+<img alt="The panel at DUSP City Arena" height="1200" loading="lazy" src="assets/img/event-panel.jpg" style="width:100%;height:auto" width="1200"/>
 </div>
 </div>
-</section>
-<!-- PANELLISTS -->
-<section class="wrap" style="padding-top:0">
-<p class="eyebrow" data-i18n="events.015">Panellists</p>
+<p class="eyebrow" data-i18n="events.015" style="margin-top:clamp(2rem,4vw,3rem)">Panellists</p>
 <div class="card-list">
 <a class="card" href="https://www.linkedin.com/in/miglioremaria/" rel="noopener">
 <span class="card__date" data-i18n="events.016">Buenos Aires</span>
@@ -82,28 +110,17 @@
 <span class="tag" data-i18n="common.016">LinkedIn ↗</span>
 </a>
 </div>
-<p style="margin-top:2rem;font-size:.98rem">Moderated by <strong>Professor Bish Sanyal</strong>. With special thanks to our advisor and supporter, <a data-i18n="events.032" href="https://www.linkedin.com/in/gabriella-carolini-49a7a1/" rel="noopener"><strong>Professor Gabriella Carolini</strong></a>.</p>
-</section>
-<!-- GALLERY -->
-<section class="wrap" style="padding-top:0">
-<div class="two" style="gap:1rem">
+<p data-i18n="events.075" style="margin-top:1.75rem;font-size:.98rem">Moderated by <strong>Professor Bish Sanyal</strong>. With special thanks to our advisor and supporter, <a href="https://www.linkedin.com/in/gabriella-carolini-49a7a1/" rel="noopener"><strong>Professor Gabriella Carolini</strong></a>.</p>
+<div class="two" style="gap:1rem;margin-top:clamp(2rem,4vw,3rem)">
 <img alt="A full room at the DUSP City Arena during the panel" height="1200" loading="lazy" src="assets/img/event-room.jpg" style="width:100%;height:auto" width="1200"/>
 <img alt="The Territorio team with Professor Gabriella Carolini after the event" height="1200" loading="lazy" src="assets/img/event-team.jpg" style="width:100%;height:auto" width="1200"/>
 </div>
-</section>
-<!-- PARTNERS -->
-<section class="field wrap" style="--accent:var(--blue)">
-<p class="eyebrow" data-i18n="events.033">In collaboration with</p>
-<div class="two">
-<div><h2 class="section-title" data-i18n="events.034">Partners</h2></div>
-<div class="measure">
-<p class="lede" data-i18n="events.035">MIT Department of Urban Studies and Planning (DUSP) · Harvard Argentine Student Society (HASS) · LatinGSD</p>
-<p data-i18n="events.036">Interested in co-hosting a conversation with us? We're always looking to build bridges across departments and institutions.</p>
-<p style="margin-top:1.5rem"><a class="tag" data-i18n="events.037" href="contact.html" style="border-color:#fff">Propose a collaboration →</a></p>
+<p class="eyebrow" data-i18n="events.033" style="margin-top:clamp(2rem,4vw,3rem);margin-bottom:.75rem">In collaboration with</p><p data-i18n="events.035" style="font-size:1.05rem">MIT Department of Urban Studies and Planning (DUSP) · Harvard Argentine Student Society (HASS) · LatinGSD</p></div>
+</article>
 </div>
-</div>
+<p class="hidden" data-i18n="events.074" id="events-empty" style="padding-block:3rem;font-size:1.1rem">Nothing here yet in this category. Check back soon.</p>
 </section>
-<!-- UPCOMING -->
+<section class="field wrap" style="--accent:var(--blue)"><div class="measure"><p class="lede" data-i18n="events.036">Interested in co-hosting a conversation with us? We're always looking to build bridges across departments and institutions.</p><p style="margin-top:1.75rem"><a class="tag" data-i18n="events.037" href="contact.html" style="border-color:#fff">Propose a collaboration →</a></p></div></section>
 <section class="wrap">
 <p class="eyebrow" data-i18n="events.038">Upcoming</p>
 <div class="two" style="align-items:center">
@@ -139,9 +156,58 @@
 </div>
 <div class="footer-legal">
 <span>© <span data-i18n="common.013" id="yr">2026</span> Territorio · MIT</span>
+<span data-i18n="common.018">Visual identity by <a href="https://www.figma.com/proto/mM1cHq479jdKp7asJm2lib/Catarina-Bernardi-s-Portfolio-2026?node-id=1-2&amp;viewport=45%2C179%2C0.09&amp;t=VkKezmYG2s2Oac7M-1&amp;scaling=contain&amp;content-scaling=fixed&amp;page-id=0%3A1" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">Catarina Bernardi</a>.</span>
 <span data-i18n="common.014">Accessibility: contact us at trtorio@mit.edu for assistance with this site.</span>
 </div>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function () {
+  var list  = document.getElementById('events');
+  var empty = document.getElementById('events-empty');
+  var btns  = document.querySelectorAll('.filters button');
+
+  function setOpen(article, on) {
+    var btn  = article.querySelector('.event__head');
+    var body = article.querySelector('.event__body');
+    btn.setAttribute('aria-expanded', String(on));
+    body.hidden = !on;
+    article.classList.toggle('is-open', on);
+  }
+
+  list.querySelectorAll('.event').forEach(function (a) {
+    var head = a.querySelector('.event__head');
+    head.addEventListener('click', function () {
+      setOpen(a, head.getAttribute('aria-expanded') !== 'true');
+    });
+  });
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.dataset.filter, shown = 0;
+      btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      list.querySelectorAll('.event').forEach(function (a) {
+        var ok = (f === 'all' || a.dataset.cat === f);
+        a.classList.toggle('hidden', !ok);
+        if (ok) { shown++; } else { setOpen(a, false); }
+      });
+      empty.classList.toggle('hidden', shown > 0);
+    });
+  });
+
+  // events.html#upgrading-what-exists opens that event directly
+  function fromHash() {
+    var id = location.hash.slice(1);
+    if (!id) return;
+    var a = document.getElementById(id);
+    if (a && a.classList.contains('event')) {
+      setOpen(a, true);
+      a.scrollIntoView({block: 'start'});
+    }
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+})();
+</script>
 <script src="assets/js/content.js"></script><script src="assets/js/i18n.js"></script></body>
 </html>
