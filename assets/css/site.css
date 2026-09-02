@@ -104,18 +104,26 @@ section{padding-block:clamp(3.5rem,9vw,8rem);}
   position:sticky;top:0;z-index:50;
   background:var(--paper);
   border-bottom:var(--rule);
-  display:flex;align-items:center;justify-content:space-between;
+  position:relative;
+  display:flex;align-items:center;
   gap:1rem;
-  padding:.85rem var(--gut);
+  padding:calc(30px * 1.8889 * 0.4706) var(--gut);
 }
 .site-header .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0;}
 .site-header .brand svg,.site-header .brand img{height:20px;width:auto;}
 nav.main{display:flex;gap:clamp(.9rem,2.2vw,2rem);align-items:center;min-width:0;}
+/* above the mobile breakpoint the page links sit centred in the header, and the
+   language switcher tucks up against the MIT mark at its clear-space distance */
+@media (min-width:961px){
+  nav.main{position:absolute;left:50%;transform:translateX(-50%);}
+  .site-header{gap:0;}                 /* the mark's own clear space sets the spacing */
+  .langs{margin-left:auto;}
+}
 
 /* ---------- language switcher ---------- */
 .langs{display:flex;align-items:center;gap:.15rem;flex-shrink:0;}
 .langs button{
-  font:inherit;font-weight:600;font-size:.68rem;letter-spacing:.09em;
+  font:inherit;font-weight:600;font-size:.76rem;letter-spacing:.08em;
   padding:.3rem .38rem;background:transparent;border:none;cursor:pointer;
   color:inherit;opacity:.45;line-height:1;
 }
@@ -123,11 +131,24 @@ nav.main{display:flex;gap:clamp(.9rem,2.2vw,2rem);align-items:center;min-width:0
 .langs button[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;}
 nav.main a{
   text-decoration:none;text-transform:uppercase;font-weight:600;
-  font-size:.72rem;letter-spacing:.11em;padding-block:.35rem;
+  font-size:.82rem;letter-spacing:.1em;padding-block:.35rem;
   border-bottom:2px solid transparent;white-space:nowrap;
 }
 nav.main a:hover{border-bottom-color:var(--ink);}
 nav.main a[aria-current="page"]{border-bottom-color:var(--accent);}
+
+
+/* ---------- MIT logo, top right of every page ----------
+   Clear space per brand.mit.edu = the width of the M, which is 47.06% of the
+   logo's width. Logo height is kept above the 30px digital minimum. */
+.mit-logo{
+  --mit-h:30px;
+  --mit-clear:calc(var(--mit-h) * 1.8889 * 0.4706);   /* width of the M */
+  flex-shrink:0;
+  display:block;
+  margin-left:var(--mit-clear);
+}
+.mit-logo img{height:var(--mit-h);width:auto;}
 
 /* ---------- block shapes (traced from the brand map assets) ---------- */
 .shape{background:var(--accent);width:100%;aspect-ratio:1/1;}
@@ -387,6 +408,7 @@ a.card:hover .card__source{opacity:1;}
 .colorbar{display:flex;height:8px;margin-bottom:1.5rem;}
 .colorbar span{flex:1;}
 .footer-legal{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-size:.78rem;opacity:.65;border-top:1px solid rgba(243,244,239,.25);padding-top:1.5rem;}
+.footer-legal a{text-decoration:underline;text-underline-offset:3px;}
 
 /* ---------- utility ---------- */
 .skip{position:absolute;left:-9999px;}
@@ -397,23 +419,30 @@ a.card:hover .card__source{opacity:1;}
 /* header: swap to the icon mark and tighten nav on narrow screens */
 .site-header .brand .mark-icon{display:none;height:22px;}
 @media (max-width:960px){
-  .site-header{padding-inline:clamp(.75rem,3vw,1.5rem);gap:.5rem;}
+  .site-header{
+    padding-inline:clamp(.9rem,3vw,1.5rem);
+    gap:calc(30px * 1.8889 * 0.4706);   /* MIT clear space between items */
+    flex-wrap:nowrap;
+  }
   .site-header .brand .mark-word{display:none;}
   .site-header .brand .mark-icon{display:block;}
+  .mit-logo{margin-left:0;order:0;}
   nav.main{
+    position:static;transform:none;
     flex:1 1 auto;
-    gap:clamp(.55rem,2.6vw,1rem);
+    min-width:0;                        /* lets the nav shrink instead of pushing the mark */
+    gap:clamp(.5rem,2.4vw,1rem);
     overflow-x:auto;
     scrollbar-width:none;
     -ms-overflow-style:none;
     margin-inline:-.25rem;padding-inline:.25rem;
-    /* fade the right edge so the clipped item reads as "scroll me" */
-    -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 1.5rem),transparent 100%);
-            mask-image:linear-gradient(to right,#000 calc(100% - 1.5rem),transparent 100%);
+    -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 1.25rem),transparent 100%);
+            mask-image:linear-gradient(to right,#000 calc(100% - 1.25rem),transparent 100%);
   }
-  .langs button{padding:.3rem .22rem;font-size:.62rem;letter-spacing:.05em;}
   nav.main::-webkit-scrollbar{display:none;}
-  nav.main a{font-size:.66rem;letter-spacing:.07em;}
+  nav.main a{font-size:.72rem;letter-spacing:.06em;}
+  .langs{margin-left:0;}
+  .langs button{padding:.3rem .24rem;font-size:.68rem;letter-spacing:.04em;}
 }
 
 @media (max-width:640px){
